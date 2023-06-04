@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 2px solid red;
+}
+.buttonWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.title {
+  font-size: 20px;
+}
