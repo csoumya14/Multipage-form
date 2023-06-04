@@ -4,9 +4,7 @@ import styles from './PlanInfo.module.scss';
 import { useForm } from 'react-hook-form';
 import { formDataTypes } from '@/types/formData/formData';
 import { Field } from '@/components/Field/Field';
-import { useRouter } from 'next/router';
-
-// ...
+import { ButtonGroup } from '@/components/ButtonGroup/ButtonGroup';
 
 interface PlanInfoProps {}
 
@@ -21,12 +19,11 @@ let planTerm = [
   { label: 'Yearly', value: 'Yearly' },
 ];
 export const PlanInfo: FC<PlanInfoProps> = () => {
-  const router = useRouter();
   const { setFormValues } = useFormData();
 
   const {
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     register,
   } = useForm();
 
@@ -61,14 +58,7 @@ export const PlanInfo: FC<PlanInfoProps> = () => {
             })}
           </select>
         </Field>
-        <div className={styles.buttonWrapper}>
-          <button type="submit" onClick={() => router.push('/')}>
-            Previous
-          </button>
-          <button disabled={!isValid} type="submit" onClick={() => router.push('/summary')}>
-            Next
-          </button>
-        </div>
+        <ButtonGroup isValid={true} forwardHref="summary" backHref="" forwardTextLabel="Next" />
       </form>
     </div>
   );

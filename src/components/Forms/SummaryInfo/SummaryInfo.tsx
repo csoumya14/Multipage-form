@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import { useFormData } from '../../../../contexts';
-import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import styles from './Summary.module.scss';
+import { ButtonGroup } from '@/components/ButtonGroup/ButtonGroup';
 // ...
 
 interface SummaryInfoProps {}
 
 export const SummaryInfo: FC<SummaryInfoProps> = () => {
   const { data } = useFormData();
-  const router = useRouter();
   const { handleSubmit } = useForm({ defaultValues: data });
   const submitData = (value: any) => {
     console.info(value);
@@ -27,14 +26,12 @@ export const SummaryInfo: FC<SummaryInfoProps> = () => {
         <li>Plan:{data.plan}</li>
         <li>Term:{data.planTerm}</li>
       </ul>
-      <div className={styles.buttonWrapper}>
-        <button type="submit" onClick={() => router.push('/plan')}>
-          Previous
-        </button>
-        <button type="submit" onClick={() => router.push('/thankYouMessage')}>
-          Confirm
-        </button>
-      </div>
+      <ButtonGroup
+        isValid={true}
+        forwardHref="thankYouMessage"
+        backHref="plan"
+        forwardTextLabel="confirm"
+      />
     </form>
   );
 };

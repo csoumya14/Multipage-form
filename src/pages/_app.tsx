@@ -1,9 +1,5 @@
-import { Layout } from '@/components/Layout/Layout';
-// import '@/styles/globals.css';
-
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import { FormProvider } from '../../contexts';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -17,11 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </Head>
-      <Layout>
-        <FormProvider>
-          <Component {...pageProps} />
-        </FormProvider>
-      </Layout>
+      <FormProvider>
+        <Component {...pageProps} />
+      </FormProvider>
     </>
   );
 }

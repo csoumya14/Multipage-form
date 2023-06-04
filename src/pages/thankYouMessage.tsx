@@ -1,7 +1,7 @@
 import { ThankYouMessage } from '@/components/Forms/ThankYouMessage/ThankYouMessage';
 import styles from '../styles/page.module.css';
 
-const ThankYou = () => {
+const ThankYouPage = () => {
   return (
     <div className={styles.main}>
       <ThankYouMessage />
@@ -9,4 +9,4 @@ const ThankYou = () => {
   );
 };
 
-export default ThankYou;
+export default ThankYouPage;

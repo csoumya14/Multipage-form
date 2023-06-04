@@ -4,8 +4,6 @@ import Head from 'next/head';
 import { PersonalInfo } from '@/components/Forms/PersonalInfo/PersonalInfo';
 
 const App = () => {
-  const { data } = useFormData();
-  console.log(data);
   return (
     <main className={styles.main}>
       <Head>

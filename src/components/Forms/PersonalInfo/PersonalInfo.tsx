@@ -5,6 +5,7 @@ import styles from './PersonalInfo.module.scss';
 import { Field } from '../../Field/Field';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
+import { Button } from '@/components/Button/Button';
 
 // ...
 const PHONE_NO_REGEX = /^[0-9\- ]{8,14}$/;
@@ -71,9 +72,9 @@ export const PersonalInfo: FC<PersonalInfoProps> = () => {
             })}
           />
         </Field>
-        <button disabled={!isValid} type="submit" onClick={() => router.push('/plan')}>
+        <Button disabled={!isValid} type="submit" onClick={() => router.push('/plan')}>
           Next
-        </button>
+        </Button>
       </form>
     </div>
   );
